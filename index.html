@@ -2,28 +2,18 @@
 <html lang="th">
 
 <head>
-
     <meta charset="UTF-8">
-
-    <meta
-        name="viewport"
-        content="width=device-width, initial-scale=1.0"
-    >
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <title>Phubet Buakhao — Portfolio</title>
 
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link
-        rel="preconnect"
-        href="https://fonts.gstatic.com"
-        crossorigin
-    >
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
     <link
         href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Kanit:wght@300;400;500;600;700&display=swap"
-        rel="stylesheet"
-    >
+        rel="stylesheet">
 
     <style>
         * {
@@ -43,7 +33,10 @@
             overflow-x: hidden;
         }
 
-        /* LOADER */
+        /* =========================
+           LOADER
+        ========================= */
+
         .loader {
             position: fixed;
             top: 0;
@@ -74,7 +67,12 @@
         .loader-line {
             width: 100px;
             height: 3px;
-            background: linear-gradient(90deg, transparent, #00d4ff, transparent);
+            background: linear-gradient(
+                90deg,
+                transparent,
+                #00d4ff,
+                transparent
+            );
             animation: slideIn 1.5s infinite;
         }
 
@@ -86,27 +84,46 @@
         }
 
         @keyframes blink {
-            0%, 100% { opacity: 1; }
-            50% { opacity: 0.3; }
+            0%, 100% {
+                opacity: 1;
+            }
+
+            50% {
+                opacity: 0.3;
+            }
         }
 
         @keyframes slideIn {
-            0% { transform: translateX(-100px); }
-            50% { transform: translateX(100px); }
-            100% { transform: translateX(-100px); }
+            0% {
+                transform: translateX(-100px);
+            }
+
+            50% {
+                transform: translateX(100px);
+            }
+
+            100% {
+                transform: translateX(-100px);
+            }
         }
 
-        /* NAVIGATION */
+        /* =========================
+           NAVIGATION
+        ========================= */
+
         .nav {
             position: fixed;
             top: 0;
             left: 0;
             right: 0;
             z-index: 1000;
+
             display: flex;
             justify-content: space-between;
             align-items: center;
+
             padding: 2rem 3rem;
+
             background: rgba(10, 14, 39, 0.95);
             backdrop-filter: blur(10px);
         }
@@ -141,9 +158,11 @@
             text-decoration: none;
             font-size: 0.9rem;
             font-weight: 600;
+
             border: 1px solid #00d4ff;
             padding: 0.5rem 1.2rem;
             border-radius: 25px;
+
             transition: all 0.3s;
         }
 
@@ -152,7 +171,10 @@
             color: #0a0e27;
         }
 
-        /* MAIN LAYOUT */
+        /* =========================
+           MAIN
+        ========================= */
+
         main {
             margin-top: 80px;
         }
@@ -163,24 +185,31 @@
             margin: 0 auto;
         }
 
-        /* HERO */
+        /* =========================
+           HERO
+        ========================= */
+
         .hero {
             min-height: 100vh;
+
             display: flex;
             align-items: center;
             justify-content: center;
+
             padding: 2rem 3rem;
         }
 
         .hero-inner {
             width: 100%;
-            max-width: 1000px;
+            max-width: 1100px;
         }
 
         .hero-top {
             display: flex;
             justify-content: space-between;
+
             margin-bottom: 3rem;
+
             font-size: 0.9rem;
             font-weight: 600;
             color: #888;
@@ -190,6 +219,7 @@
             font-size: 4rem;
             font-weight: 800;
             line-height: 1.1;
+
             margin-bottom: 2rem;
         }
 
@@ -201,138 +231,162 @@
             display: flex;
             gap: 3rem;
             align-items: center;
+
             margin-bottom: 3rem;
         }
 
         .hero-side-text {
-            flex: 0 0 200px;
+            flex: 0 0 180px;
+
             font-size: 1rem;
             line-height: 1.8;
             color: #aaa;
+        }
+
+        /* =========================
+           PROFILE PHOTO
+        ========================= */
+
+        .profile-photo-wrap {
+            flex: 0 0 260px;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .profile-photo {
+            width: 250px;
+            height: 310px;
+
+            object-fit: cover;
+
+            border-radius: 18px;
+
+            border: 1px solid #00d4ff;
+
+            background: #1a1f3a;
+
+            box-shadow:
+                0 0 40px rgba(0, 212, 255, 0.12);
+
+            transition:
+                transform 0.5s ease,
+                box-shadow 0.5s ease;
+        }
+
+        .profile-photo:hover {
+            transform: scale(1.04);
+
+            box-shadow:
+                0 0 50px rgba(0, 212, 255, 0.25);
         }
 
         .hero-bottom {
             display: flex;
             justify-content: space-between;
             align-items: flex-end;
+
             gap: 2rem;
         }
 
         .hero-description {
             flex: 1;
+
             font-size: 1rem;
             line-height: 1.8;
+
             color: #aaa;
+
             max-width: 600px;
         }
 
         .scroll-button {
             display: flex;
             flex-direction: column;
+
             align-items: center;
+
             gap: 0.5rem;
+
             text-decoration: none;
+
             color: #00d4ff;
+
             font-size: 0.8rem;
             font-weight: 600;
+
             cursor: pointer;
+
             animation: bounce 2s infinite;
         }
 
         @keyframes bounce {
-            0%, 100% { transform: translateY(0); }
-            50% { transform: translateY(10px); }
-        }
 
-
-        /* PROFILE PHOTO */
-        .profile-photo-wrap {
-            flex: 0 0 280px;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 1rem;
-        }
-
-        .profile-photo {
-            width: 260px;
-            height: 320px;
-            object-fit: cover;
-            border-radius: 18px;
-            border: 1px solid #00d4ff;
-            background: #1a1f3a;
-            box-shadow: 0 0 40px rgba(0, 212, 255, 0.12);
-        }
-
-        .photo-upload {
-            color: #00d4ff;
-            border: 1px solid #00d4ff;
-            padding: 0.65rem 1rem;
-            border-radius: 25px;
-            cursor: pointer;
-            font-size: 0.85rem;
-            font-weight: 600;
-            transition: all 0.3s;
-        }
-
-        .photo-upload:hover {
-            background: #00d4ff;
-            color: #0a0e27;
-        }
-
-        #profileUpload {
-            display: none;
-        }
-
-        @media (max-width: 768px) {
-            .profile-photo-wrap {
-                flex: none;
-                width: 100%;
-                margin-top: 1rem;
+            0%,
+            100% {
+                transform: translateY(0);
             }
 
-            .profile-photo {
-                width: 210px;
-                height: 260px;
+            50% {
+                transform: translateY(10px);
             }
         }
 
-        /* ANIMATIONS */
+        /* =========================
+           ANIMATIONS
+        ========================= */
+
         .reveal {
             opacity: 0;
+
             transform: translateY(30px);
-            animation: revealAnimation 0.8s ease-out forwards;
+
+            animation:
+                revealAnimation 0.8s ease-out forwards;
         }
 
         @keyframes revealAnimation {
+
             to {
                 opacity: 1;
                 transform: translateY(0);
             }
         }
 
-        /* SECTION LABEL */
+        /* =========================
+           SECTION LABEL
+        ========================= */
+
         .section-label {
             display: flex;
             align-items: center;
+
             gap: 1rem;
+
             margin-bottom: 3rem;
         }
 
         .section-label span {
             font-size: 3rem;
             font-weight: 800;
+
             color: #00d4ff;
         }
 
         .section-label p {
             font-size: 0.9rem;
             font-weight: 600;
+
             letter-spacing: 0.05em;
+
             color: #888;
         }
 
-        /* WORK SECTION */
+        /* =========================
+           WORK
+        ========================= */
+
         .work-heading {
             margin-bottom: 4rem;
         }
@@ -340,6 +394,7 @@
         .work-heading h2 {
             font-size: 3rem;
             font-weight: 800;
+
             margin-bottom: 1rem;
         }
 
@@ -354,12 +409,19 @@
 
         .work-item {
             display: grid;
+
             grid-template-columns: 1fr 1fr;
+
             gap: 3rem;
+
             align-items: center;
+
             margin-bottom: 6rem;
+
             text-decoration: none;
+
             color: inherit;
+
             transition: all 0.3s;
         }
 
@@ -371,29 +433,40 @@
             direction: rtl;
         }
 
-        .work-item:nth-child(even) > * {
+        .work-item:nth-child(even)>* {
             direction: ltr;
         }
 
         .work-image {
             position: relative;
+
             overflow: hidden;
+
             border-radius: 10px;
+
             height: 400px;
+
             background: #1a1f3a;
         }
 
         .work-image img {
             width: 100%;
             height: 100%;
+
             object-fit: cover;
-            transition: transform 0.6s ease, filter 0.6s ease;
+
+            transition:
+                transform 0.6s ease,
+                filter 0.6s ease;
+
             filter: brightness(0.9);
+
             transform: none !important;
         }
 
         .work-item:hover .work-image img {
             transform: scale(1.05) !important;
+
             filter: brightness(1);
         }
 
@@ -403,69 +476,102 @@
 
         .work-number {
             font-size: 5rem;
+
             font-weight: 800;
+
             color: #00d4ff;
+
             opacity: 0.1;
+
             position: absolute;
+
             top: -2rem;
             left: 0;
         }
 
         .work-category {
             color: #888;
+
             font-size: 0.8rem;
+
             font-weight: 600;
+
             letter-spacing: 0.05em;
+
             margin-bottom: 0.5rem;
         }
 
         .work-content h3 {
             font-size: 2rem;
+
             font-weight: 700;
+
             margin-bottom: 1rem;
+
             color: #ffffff;
         }
 
         .work-description {
             color: #aaa;
+
             font-size: 1rem;
+
             line-height: 1.6;
+
             margin-bottom: 1rem;
         }
 
         .work-arrow {
             font-size: 2rem;
+
             color: #00d4ff;
+
             opacity: 0;
+
             transform: translateX(-20px);
+
             transition: all 0.3s;
         }
 
         .work-item:hover .work-arrow {
             opacity: 1;
+
             transform: translateX(0);
         }
 
-        /* INFO SECTION */
+        /* =========================
+           INFO
+        ========================= */
+
         .info-grid {
             display: grid;
+
             grid-template-columns: 1.5fr 1fr;
+
             gap: 4rem;
+
             margin-bottom: 4rem;
         }
 
         .small-label {
             color: #888;
+
             font-size: 0.8rem;
+
             font-weight: 600;
+
             letter-spacing: 0.05em;
+
             margin-bottom: 1rem;
+
             text-transform: uppercase;
         }
 
         .info-main h2 {
             font-size: 3rem;
+
             font-weight: 800;
+
             margin-bottom: 2rem;
         }
 
@@ -475,122 +581,179 @@
 
         .info-text {
             color: #aaa;
+
             font-size: 1rem;
+
             line-height: 1.8;
         }
 
         .info-details {
             display: grid;
+
             grid-template-columns: 1fr 1fr;
+
             gap: 2rem;
         }
 
         .detail span {
             color: #888;
+
             font-size: 0.8rem;
+
             font-weight: 600;
+
             display: block;
+
             margin-bottom: 0.5rem;
         }
 
         .detail strong {
             color: #ffffff;
+
             font-size: 1rem;
         }
 
-        /* SKILLS */
+        /* =========================
+           SKILLS
+        ========================= */
+
         .skills-area {
             margin-top: 4rem;
+
             padding-top: 4rem;
+
             border-top: 1px solid #1a1f3a;
         }
 
         .skills-list {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+
+            grid-template-columns:
+                repeat(auto-fit, minmax(250px, 1fr));
+
             gap: 2rem;
         }
 
         .skill {
             display: flex;
+
             justify-content: space-between;
+
             align-items: center;
+
             padding: 1.5rem;
+
             background: #1a1f3a;
+
             border-radius: 10px;
+
             transition: all 0.3s;
         }
 
         .skill:hover {
             background: #252d4a;
+
             transform: translateY(-5px);
         }
 
         .skill span:first-child {
             font-weight: 600;
+
             color: #ffffff;
         }
 
         .skill span:last-child {
             color: #00d4ff;
+
             font-weight: 700;
         }
 
-        /* ACHIEVEMENT */
+        /* =========================
+           ACHIEVEMENT
+        ========================= */
+
         .achievement-section {
             padding: 6rem 3rem;
-            background: linear-gradient(135deg, #1a1f3a 0%, #0a0e27 100%);
+
+            background:
+                linear-gradient(
+                    135deg,
+                    #1a1f3a 0%,
+                    #0a0e27 100%
+                );
+
             border-top: 1px solid #1a1f3a;
+
             border-bottom: 1px solid #1a1f3a;
         }
 
         .achievement-inner {
             max-width: 1200px;
+
             margin: 0 auto;
         }
 
         .achievement-content {
             display: grid;
+
             grid-template-columns: 1fr 1fr;
+
             gap: 4rem;
+
             align-items: center;
+
             margin-top: 3rem;
         }
 
         .achievement-number {
             font-size: 6rem;
+
             font-weight: 800;
+
             color: #00d4ff;
         }
 
         .achievement-content h2 {
             font-size: 2.5rem;
+
             font-weight: 800;
+
             line-height: 1.2;
+
             margin-bottom: 1rem;
         }
 
         .achievement-description p:first-child {
             color: #888;
+
             font-size: 0.8rem;
+
             font-weight: 600;
+
             margin-bottom: 1rem;
         }
 
         .achievement-description p:last-child {
             color: #aaa;
+
             font-size: 1rem;
+
             line-height: 1.8;
         }
 
-        /* FUTURE */
+        /* =========================
+           FUTURE
+        ========================= */
+
         .future-inner {
             max-width: 800px;
         }
 
         .future h2 {
             font-size: 3rem;
+
             font-weight: 800;
+
             margin-bottom: 2rem;
         }
 
@@ -600,87 +763,126 @@
 
         .future p {
             color: #aaa;
+
             font-size: 1rem;
+
             line-height: 1.8;
         }
 
-        /* CONTACT */
+        /* =========================
+           CONTACT
+        ========================= */
+
         .contact-inner {
             max-width: 1000px;
         }
 
         .contact-inner h2 {
             font-size: 3rem;
+
             font-weight: 800;
+
             margin-bottom: 2rem;
         }
 
         .contact-links {
             display: flex;
+
             flex-direction: column;
+
             gap: 1.5rem;
+
             margin-top: 3rem;
         }
 
         .contact-links a {
             display: flex;
+
             justify-content: space-between;
+
             align-items: center;
+
             padding: 1.5rem 2rem;
+
             border: 1px solid #1a1f3a;
+
             border-radius: 10px;
+
             text-decoration: none;
+
             color: inherit;
+
             transition: all 0.3s;
         }
 
         .contact-links a:hover {
             border-color: #00d4ff;
-            background: rgba(0, 212, 255, 0.05);
+
+            background:
+                rgba(0, 212, 255, 0.05);
+
             transform: translateX(10px);
         }
 
         .contact-links span {
             color: #888;
+
             font-size: 0.8rem;
+
             font-weight: 600;
         }
 
         .contact-links strong {
             color: #ffffff;
+
             font-size: 1rem;
         }
 
         .contact-links b {
             color: #00d4ff;
+
             font-size: 1.5rem;
         }
 
-        /* FOOTER */
+        /* =========================
+           FOOTER
+        ========================= */
+
         footer {
             padding: 3rem;
+
             text-align: center;
+
             border-top: 1px solid #1a1f3a;
+
             color: #888;
         }
 
-        footer > div {
+        footer>div {
             font-size: 1.5rem;
+
             font-weight: 700;
+
             color: #00d4ff;
+
             margin-bottom: 1rem;
         }
 
         footer p {
             font-size: 0.9rem;
+
             margin-bottom: 1rem;
         }
 
         footer a {
             color: #00d4ff;
+
             text-decoration: none;
+
             font-size: 0.9rem;
+
             font-weight: 600;
+
             transition: all 0.3s;
         }
 
@@ -688,8 +890,12 @@
             transform: translateY(-3px);
         }
 
-        /* RESPONSIVE */
+        /* =========================
+           RESPONSIVE
+        ========================= */
+
         @media (max-width: 768px) {
+
             .nav {
                 padding: 1.5rem;
             }
@@ -698,9 +904,18 @@
                 gap: 1rem;
             }
 
+            .nav-links a {
+                font-size: 0.75rem;
+            }
+
+            .nav-contact {
+                font-size: 0.75rem;
+            }
+
             .hero {
                 min-height: auto;
-                padding: 1rem;
+
+                padding: 4rem 1rem 2rem;
             }
 
             .hero-title {
@@ -709,20 +924,52 @@
 
             .hero-title-wrap {
                 flex-direction: column;
+
                 align-items: flex-start;
+
+                gap: 2rem;
             }
 
             .hero-side-text {
                 flex: none;
             }
 
+            .profile-photo-wrap {
+                width: 100%;
+
+                justify-content: center;
+
+                margin-top: 1rem;
+            }
+
+            .profile-photo {
+                width: 210px;
+
+                height: 260px;
+            }
+
+            .hero-bottom {
+                flex-direction: column;
+
+                align-items: flex-start;
+            }
+
+            .scroll-button {
+                margin-top: 1rem;
+            }
+
             .work-item {
                 grid-template-columns: 1fr;
+
                 gap: 1.5rem;
             }
 
             .work-item:nth-child(even) {
                 direction: ltr;
+            }
+
+            .work-image {
+                height: 300px;
             }
 
             .info-grid {
@@ -733,8 +980,27 @@
                 grid-template-columns: 1fr;
             }
 
+            .achievement-number {
+                font-size: 4rem;
+            }
+
             .section {
                 padding: 3rem 1.5rem;
+            }
+
+            .section-label span {
+                font-size: 2.2rem;
+            }
+
+            .work-heading h2,
+            .info-main h2,
+            .future h2,
+            .contact-inner h2 {
+                font-size: 2.3rem;
+            }
+
+            .info-details {
+                grid-template-columns: 1fr 1fr;
             }
         }
     </style>
@@ -743,489 +1009,1275 @@
 
 <body>
 
+    <!-- =========================
+         LOADER
+    ========================= -->
+
     <div class="loader" id="loader">
+
         <div class="loader-text">
             PHUBET<span>.</span>
         </div>
+
         <div class="loader-line">
             <span></span>
         </div>
+
     </div>
 
+
+    <!-- =========================
+         NAVIGATION
+    ========================= -->
+
     <header class="nav">
+
         <a href="#top" class="nav-logo">
             PHUBET.
         </a>
+
         <nav class="nav-links">
-            <a href="#work">Work</a>
-            <a href="#info">Info</a>
+
+            <a href="#work">
+                Work
+            </a>
+
+            <a href="#info">
+                Info
+            </a>
+
         </nav>
+
         <a href="#contact" class="nav-contact">
             Contact
         </a>
+
     </header>
+
+
+    <!-- =========================
+         MAIN
+    ========================= -->
 
     <main id="top">
 
+
+        <!-- =========================
+             HERO
+        ========================= -->
+
         <section class="hero">
+
             <div class="hero-inner">
+
                 <div class="hero-top reveal">
-                    <span>STUDENT PORTFOLIO</span>
-                    <span>2026</span>
+
+                    <span>
+                        STUDENT PORTFOLIO
+                    </span>
+
+                    <span>
+                        2026
+                    </span>
+
                 </div>
+
 
                 <div class="hero-title-wrap">
+
+
+                    <!-- TITLE -->
+
                     <h1 class="hero-title reveal">
+
                         ผมสร้าง<br>
-                        <span>สิ่งที่ผมสนใจ</span>
+
+                        <span>
+                            สิ่งที่ผมสนใจ
+                        </span>
+
                     </h1>
 
+
+                    <!-- INTEREST -->
+
                     <div class="hero-side-text reveal">
+
                         <p>
+
                             Programming<br>
+
                             Football<br>
+
                             Futsal
+
                         </p>
+
                     </div>
+
+
+                    <!-- =========================
+                         YOUR PHOTO
+                    ========================= -->
 
                     <div class="profile-photo-wrap reveal">
+
                         <img
-                            id="profilePhoto"
                             class="profile-photo"
-                            src="profile.jpg"
+                            src="phubet.jpg"
                             alt="รูปโปรไฟล์ของภูเบศวร์ บัวขาว"
-                            onerror="this.src='https://placehold.co/520x640/1a1f3a/00d4ff?text=YOUR+PHOTO'"
                         >
-                        <label class="photo-upload" for="profileUpload">
-                            + เลือกรูปของตัวเอง
-                        </label>
-                        <input id="profileUpload" type="file" accept="image/*">
+
                     </div>
+
                 </div>
 
+
+                <!-- HERO DESCRIPTION -->
+
                 <div class="hero-bottom reveal">
+
                     <p class="hero-description">
+
                         สวัสดีครับ ผม
-                        <strong>ภูเบศวร์ บัวขาว</strong>
+                        <strong>
+                            ภูเบศวร์ บัวขาว
+                        </strong>
+
                         นักเรียนชั้น ม.4/7
                         โรงเรียนสามร้อยยอดวิทยาคม
 
+                        <br><br>
+
                         ผมสนใจด้าน Programming
                         และชื่นชอบฟุตบอลกับฟุตซอล
+
                     </p>
 
-                    <a href="#work" class="scroll-button">
-                        <span>SCROLL TO SEE WORK</span>
-                        <strong>↓</strong>
+
+                    <a
+                        href="#work"
+                        class="scroll-button"
+                    >
+
+                        <span>
+                            SCROLL TO SEE WORK
+                        </span>
+
+                        <strong>
+                            ↓
+                        </strong>
+
                     </a>
+
                 </div>
+
             </div>
+
         </section>
 
-        <section class="work section" id="work">
+
+
+        <!-- =========================
+             WORK
+        ========================= -->
+
+        <section
+            class="work section"
+            id="work"
+        >
+
             <div class="section-label reveal">
-                <span>01</span>
-                <p>SELECTED WORK</p>
+
+                <span>
+                    01
+                </span>
+
+                <p>
+                    SELECTED WORK
+                </p>
+
             </div>
+
 
             <div class="work-heading reveal">
+
                 <h2>
+
                     ผลงานที่ผม<br>
-                    <span>ภูมิใจ</span>
+
+                    <span>
+                        ภูมิใจ
+                    </span>
+
                 </h2>
-                <p>Projects & Activities</p>
+
+                <p>
+                    Projects & Activities
+                </p>
+
             </div>
 
+
+
             <!-- PROJECT 01 -->
-            <a href="#" class="work-item reveal">
+
+            <a
+                href="#"
+                class="work-item reveal"
+            >
+
                 <div class="work-image">
-                    <img src="https://images.unsplash.com/photo-1461896836934-ffe607ba8211?w=800&h=500&fit=crop&q=80" alt="การแข่งขันฟุตบอลโรงเรียน">
+
+                    <img
+                        src=""
+                        alt="การแข่งขันฟุตบอลโรงเรียน"
+                    >
+
                 </div>
+
+
                 <div class="work-content">
-                    <div class="work-number">01</div>
+
+                    <div class="work-number">
+                        01
+                    </div>
+
                     <div>
-                        <p class="work-category">SPORTS / SCHOOL</p>
-                        <h3>การแข่งขันฟุตบอลโรงเรียน</h3>
+
+                        <p class="work-category">
+                            SPORTS / SCHOOL
+                        </p>
+
+                        <h3>
+                            การแข่งขันฟุตบอลโรงเรียน
+                        </h3>
+
                         <p class="work-description">
+
                             เข้าร่วมการแข่งขันฟุตบอล
                             ของโรงเรียน
+
                             ฝึกทักษะกีฬา
                             ความรับผิดชอบ
                             และการทำงานเป็นทีม
+
                         </p>
+
                     </div>
+
                 </div>
-                <div class="work-arrow">↗</div>
+
+
+                <div class="work-arrow">
+                    ↗
+                </div>
+
             </a>
 
+
+
             <!-- PROJECT 02 -->
-            <a href="#" class="work-item reveal">
+
+            <a
+                href="#"
+                class="work-item reveal"
+            >
+
                 <div class="work-image">
-                    <img src="https://images.unsplash.com/photo-1552993881-b72415a27be5?w=800&h=500&fit=crop&q=80" alt="การแข่งขันฟุตซอล">
+
+                    <img
+                        src=""
+                        alt="การแข่งขันฟุตซอล"
+                    >
+
                 </div>
+
+
                 <div class="work-content">
-                    <div class="work-number">02</div>
+
+                    <div class="work-number">
+                        02
+                    </div>
+
                     <div>
-                        <p class="work-category">SPORTS / COMPETITION</p>
-                        <h3>การแข่งขันฟุตซอล</h3>
+
+                        <p class="work-category">
+                            SPORTS / COMPETITION
+                        </p>
+
+                        <h3>
+                            การแข่งขันฟุตซอล
+                        </h3>
+
                         <p class="work-description">
+
                             ฝึกการเล่นร่วมกับทีม
                             การตัดสินใจ
                             และการแก้ปัญหา
                             ในสถานการณ์จริง
+
                         </p>
+
                     </div>
+
                 </div>
-                <div class="work-arrow">↗</div>
+
+
+                <div class="work-arrow">
+                    ↗
+                </div>
+
             </a>
 
+
+
             <!-- PROJECT 03 -->
-            <a href="#" class="work-item reveal">
+
+            <a
+                href="#"
+                class="work-item reveal"
+            >
+
                 <div class="work-image">
-                    <img src="https://images.unsplash.com/photo-1517694712202-14dd9538aa97?w=800&h=500&fit=crop&q=80" alt="โปรเจกต์เว็บไซต์">
+
+                    <img
+                        src=""
+                        alt="โปรเจกต์เว็บไซต์"
+                    >
+
                 </div>
+
+
                 <div class="work-content">
-                    <div class="work-number">03</div>
+
+                    <div class="work-number">
+                        03
+                    </div>
+
                     <div>
-                        <p class="work-category">PROGRAMMING / WEB</p>
-                        <h3>Personal Portfolio</h3>
+
+                        <p class="work-category">
+                            PROGRAMMING / WEB
+                        </p>
+
+                        <h3>
+                            Personal Portfolio
+                        </h3>
+
                         <p class="work-description">
+
                             ฝึกสร้างเว็บไซต์
                             ด้วย HTML, CSS
                             และ JavaScript
+
                             เพื่อพัฒนาทักษะ
                             Web Development
+
                         </p>
+
                     </div>
+
                 </div>
-                <div class="work-arrow">↗</div>
+
+
+                <div class="work-arrow">
+                    ↗
+                </div>
+
             </a>
+
+
 
             <!-- PROJECT 04 -->
-            <a href="#" class="work-item reveal">
+
+            <a
+                href="#"
+                class="work-item reveal"
+            >
+
                 <div class="work-image">
-                    <img src="https://images.unsplash.com/photo-1577306228126-773e5f34534e?w=800&h=500&fit=crop&q=80" alt="การแข่งขันฟุตซอลต้านยาเสพติด">
+
+                    <img
+                        src="https://images.unsplash.com/photo-1577306228126-773e5f34534e?w=800&h=500&fit=crop&q=80"
+                        alt="การแข่งขันฟุตซอลต้านยาเสพติด"
+                    >
+
                 </div>
+
+
                 <div class="work-content">
-                    <div class="work-number">04</div>
+
+                    <div class="work-number">
+                        04
+                    </div>
+
                     <div>
-                        <p class="work-category">ACHIEVEMENT / FUTSAL</p>
-                        <h3>ฟุตซอลต้านยาเสพติด</h3>
+
+                        <p class="work-category">
+                            ACHIEVEMENT / FUTSAL
+                        </p>
+
+                        <h3>
+                            ฟุตซอลต้านยาเสพติด
+                        </h3>
+
                         <p class="work-description">
+
                             เข้าร่วมการแข่งขัน
                             ฟุตซอลต้านยาเสพติด
+
                             และได้รับรางวัล
-                            <strong>รองชนะเลิศอันดับ 3</strong>
+
+                            <strong>
+                                รองชนะเลิศอันดับ 3
+                            </strong>
+
                         </p>
+
                     </div>
+
                 </div>
-                <div class="work-arrow">↗</div>
+
+
+                <div class="work-arrow">
+                    ↗
+                </div>
+
             </a>
+
         </section>
 
-        <section class="info section" id="info">
+
+
+        <!-- =========================
+             INFO
+        ========================= -->
+
+        <section
+            class="info section"
+            id="info"
+        >
+
             <div class="section-label reveal">
-                <span>02</span>
-                <p>INFO</p>
+
+                <span>
+                    02
+                </span>
+
+                <p>
+                    INFO
+                </p>
+
             </div>
 
+
             <div class="info-grid">
+
+
+                <!-- ABOUT -->
+
                 <div class="info-main reveal">
-                    <p class="small-label">ABOUT ME</p>
+
+                    <p class="small-label">
+                        ABOUT ME
+                    </p>
+
                     <h2>
+
                         ผมคือ
-                        <span>ภู</span>
+                        <span>
+                            ภู
+                        </span>
+
                     </h2>
+
+
                     <p class="info-text">
+
                         ผมชื่อ
-                        <strong>ภูเบศวร์ บัวขาว</strong>
+                        <strong>
+                            ภูเบศวร์ บัวขาว
+                        </strong>
+
                         ชื่อเล่นภู
+
+                        <br><br>
 
                         ปัจจุบันศึกษาอยู่ชั้น
                         ม.4/7
                         โรงเรียนสามร้อยยอดวิทยาคม
 
+                        <br><br>
+
                         ผมสนใจ Programming
                         และชอบเรียนรู้เกี่ยวกับ
                         การสร้างเว็บไซต์
 
+                        <br><br>
+
                         นอกจากนั้นผมยังชอบ
                         ฟุตบอลและฟุตซอล
+
                         ซึ่งเป็นกีฬาที่ผมตั้งใจ
                         พัฒนาตัวเองอย่างต่อเนื่อง
+
                     </p>
+
                 </div>
+
+
+                <!-- DETAILS -->
 
                 <div class="info-details reveal">
+
+
                     <div class="detail">
-                        <span>NAME</span>
-                        <strong>ภูเบศวร์ บัวขาว</strong>
+
+                        <span>
+                            NAME
+                        </span>
+
+                        <strong>
+                            ภูเบศวร์ บัวขาว
+                        </strong>
+
                     </div>
+
+
                     <div class="detail">
-                        <span>NICKNAME</span>
-                        <strong>ภู</strong>
+
+                        <span>
+                            NICKNAME
+                        </span>
+
+                        <strong>
+                            ภู
+                        </strong>
+
                     </div>
+
+
                     <div class="detail">
-                        <span>EDUCATION</span>
-                        <strong>ม.4/7</strong>
+
+                        <span>
+                            EDUCATION
+                        </span>
+
+                        <strong>
+                            ม.4/7
+                        </strong>
+
                     </div>
+
+
                     <div class="detail">
-                        <span>SCHOOL</span>
-                        <strong>โรงเรียนสามร้อยยอดวิทยาคม</strong>
+
+                        <span>
+                            SCHOOL
+                        </span>
+
+                        <strong>
+                            โรงเรียนสามร้อยยอดวิทยาคม
+                        </strong>
+
                     </div>
+
+
                     <div class="detail">
-                        <span>INTEREST</span>
-                        <strong>Programming</strong>
+
+                        <span>
+                            INTEREST
+                        </span>
+
+                        <strong>
+                            Programming
+                        </strong>
+
                     </div>
+
+
                     <div class="detail">
-                        <span>GOAL</span>
-                        <strong>นักฟุตบอล / ฟุตซอล</strong>
+
+                        <span>
+                            GOAL
+                        </span>
+
+                        <strong>
+                            นักฟุตบอล / ฟุตซอล
+                        </strong>
+
                     </div>
+
                 </div>
+
             </div>
+
+
+
+            <!-- SKILLS -->
 
             <div class="skills-area reveal">
-                <p class="small-label">SKILLS</p>
+
+                <p class="small-label">
+                    SKILLS
+                </p>
+
+
                 <div class="skills-list">
+
+
                     <div class="skill">
-                        <span>HTML</span>
-                        <span>85%</span>
+
+                        <span>
+                            HTML
+                        </span>
+
+                        <span>
+                            85%
+                        </span>
+
                     </div>
+
+
                     <div class="skill">
-                        <span>CSS</span>
-                        <span>80%</span>
+
+                        <span>
+                            CSS
+                        </span>
+
+                        <span>
+                            80%
+                        </span>
+
                     </div>
+
+
                     <div class="skill">
-                        <span>JavaScript</span>
-                        <span>65%</span>
+
+                        <span>
+                            JavaScript
+                        </span>
+
+                        <span>
+                            65%
+                        </span>
+
                     </div>
+
+
                     <div class="skill">
-                        <span>Canva</span>
-                        <span>90%</span>
+
+                        <span>
+                            Canva
+                        </span>
+
+                        <span>
+                            90%
+                        </span>
+
                     </div>
+
+
                     <div class="skill">
-                        <span>English</span>
-                        <span>65%</span>
+
+                        <span>
+                            English
+                        </span>
+
+                        <span>
+                            65%
+                        </span>
+
                     </div>
+
+
+                    <div class="skill">
+
+                        <span>
+                            Teamwork
+                        </span>
+
+                        <span>
+                            85%
+                        </span>
+
+                    </div>
+
                 </div>
+
             </div>
+
         </section>
 
+
+
+        <!-- =========================
+             ACHIEVEMENT
+        ========================= -->
+
         <section class="achievement-section">
+
             <div class="achievement-inner reveal">
-                <p class="small-label">ACHIEVEMENT</p>
+
+                <p class="small-label">
+                    ACHIEVEMENT
+                </p>
+
+
                 <div class="achievement-content">
+
+
                     <div>
-                        <p class="achievement-number">03</p>
+
+                        <p class="achievement-number">
+                            03
+                        </p>
+
                         <h2>
+
                             รองชนะเลิศ<br>
+
                             อันดับสาม
+
                         </h2>
+
                     </div>
+
+
                     <div class="achievement-description">
-                        <p>FUTSAL</p>
+
                         <p>
+                            FUTSAL
+                        </p>
+
+                        <p>
+
                             การแข่งขันฟุตซอล
                             ต้านยาเสพติด
+
                             เป็นหนึ่งในผลงานที่ผม
                             ภูมิใจ เพราะได้เรียนรู้
+
                             ทั้งการทำงานเป็นทีม
                             ความมีวินัย
                             และความพยายาม
+
                         </p>
+
                     </div>
+
                 </div>
+
             </div>
+
         </section>
 
+
+
+        <!-- =========================
+             FUTURE
+        ========================= -->
+
         <section class="future section">
+
             <div class="future-inner reveal">
-                <p class="small-label">FUTURE</p>
+
+                <p class="small-label">
+                    FUTURE
+                </p>
+
+
                 <h2>
+
                     Keep learning.<br>
-                    <span>Keep improving.</span>
+
+                    <span>
+                        Keep improving.
+                    </span>
+
                 </h2>
+
+
                 <p>
+
                     เป้าหมายของผมคือ
                     การพัฒนาตัวเองอย่างต่อเนื่อง
+
                     เพื่อเป็นนักฟุตบอลหรือนักฟุตซอล
+
+                    <br><br>
 
                     พร้อมกับพัฒนาทักษะ
                     ด้าน Programming
                     ไปพร้อมกัน
+
                 </p>
+
             </div>
+
         </section>
 
-        <section class="contact section" id="contact">
+
+
+        <!-- =========================
+             CONTACT
+        ========================= -->
+
+        <section
+            class="contact section"
+            id="contact"
+        >
+
             <div class="contact-inner reveal">
-                <p class="small-label">CONTACT</p>
+
+                <p class="small-label">
+                    CONTACT
+                </p>
+
+
                 <h2>
+
                     Let's<br>
+
                     connect.
+
                 </h2>
+
+
                 <div class="contact-links">
-                    <a href="https://www.instagram.com/phubetbuakhao/" target="_blank" rel="noopener noreferrer">
-                        <span>INSTAGRAM</span>
-                        <strong>@phubetbuakhao</strong>
-                        <b>↗</b>
+
+
+                    <!-- INSTAGRAM -->
+
+                    <a
+                        href="https://www.instagram.com/phubetbuakhao/"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >
+
+                        <span>
+                            INSTAGRAM
+                        </span>
+
+                        <strong>
+                            @phubetbuakhao
+                        </strong>
+
+                        <b>
+                            ↗
+                        </b>
+
                     </a>
-                    <a href="https://www.facebook.com/" target="_blank" rel="noopener noreferrer">
-                        <span>FACEBOOK</span>
-                        <strong>Phubet Buakhao</strong>
-                        <b>↗</b>
+
+
+                    <!-- FACEBOOK -->
+
+                    <a
+                        href="https://www.facebook.com/"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >
+
+                        <span>
+                            FACEBOOK
+                        </span>
+
+                        <strong>
+                            Phubet Buakhao
+                        </strong>
+
+                        <b>
+                            ↗
+                        </b>
+
                     </a>
-                    <a href="mailto:phubetbuakhao23@gmail.com">
-                        <span>EMAIL</span>
-                        <strong>phubetbuakhao23@gmail.com</strong>
-                        <b>↗</b>
+
+
+                    <!-- EMAIL -->
+
+                    <a
+                        href="mailto:phubetbuakhao23@gmail.com"
+                    >
+
+                        <span>
+                            EMAIL
+                        </span>
+
+                        <strong>
+                            phubetbuakhao23@gmail.com
+                        </strong>
+
+                        <b>
+                            ↗
+                        </b>
+
                     </a>
+
                 </div>
+
             </div>
+
         </section>
 
     </main>
 
+
+
+    <!-- =========================
+         FOOTER
+    ========================= -->
+
     <footer>
-        <div>PHUBET.</div>
-        <p>© 2026 Phubet Buakhao</p>
-        <a href="#top">BACK TO TOP ↑</a>
+
+        <div>
+            PHUBET.
+        </div>
+
+        <p>
+            © 2026 Phubet Buakhao
+        </p>
+
+        <a href="#top">
+            BACK TO TOP ↑
+        </a>
+
     </footer>
+
+
+
+    <!-- =========================
+         JAVASCRIPT
+    ========================= -->
 
     <script>
 
-        // PROFILE PHOTO UPLOAD
-        const profileUpload = document.getElementById('profileUpload');
-        const profilePhoto = document.getElementById('profilePhoto');
+        /* =========================
+           REVEAL ANIMATIONS
+        ========================= */
 
-        if (profileUpload && profilePhoto) {
-            profileUpload.addEventListener('change', function () {
-                const file = this.files && this.files[0];
-                if (!file) return;
-
-                if (!file.type.startsWith('image/')) {
-                    alert('กรุณาเลือกรูปภาพเท่านั้น');
-                    return;
-                }
-
-                const reader = new FileReader();
-                reader.onload = function (e) {
-                    profilePhoto.src = e.target.result;
-                };
-                reader.readAsDataURL(file);
-            });
-        }
-
-        // REVEAL ANIMATIONS
         const observerOptions = {
+
             threshold: 0.1,
-            rootMargin: '0px 0px -100px 0px'
+
+            rootMargin:
+                '0px 0px -100px 0px'
+
         };
 
-        const observer = new IntersectionObserver(function(entries) {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.style.animationPlayState = 'running';
-                    observer.unobserve(entry.target);
+
+        const observer =
+            new IntersectionObserver(
+                function (entries) {
+
+                    entries.forEach(
+                        entry => {
+
+                            if (
+                                entry.isIntersecting
+                            ) {
+
+                                entry.target
+                                    .style
+                                    .animationPlayState =
+                                    'running';
+
+                                observer
+                                    .unobserve(
+                                        entry.target
+                                    );
+
+                            }
+
+                        }
+                    );
+
+                },
+                observerOptions
+            );
+
+
+        document
+            .querySelectorAll('.reveal')
+            .forEach(
+                el => {
+
+                    el.style
+                        .animationPlayState =
+                        'paused';
+
+                    observer.observe(el);
+
                 }
+            );
+
+
+        /* =========================
+           SMOOTH SCROLL
+        ========================= */
+
+        document
+            .querySelectorAll(
+                'a[href^="#"]'
+            )
+            .forEach(anchor => {
+
+                anchor.addEventListener(
+                    'click',
+                    function (e) {
+
+                        e.preventDefault();
+
+                        const target =
+                            document.querySelector(
+                                this.getAttribute(
+                                    'href'
+                                )
+                            );
+
+                        if (target) {
+
+                            target.scrollIntoView({
+
+                                behavior:
+                                    'smooth'
+
+                            });
+
+                        }
+
+                    }
+                );
+
             });
-        }, observerOptions);
 
-        document.querySelectorAll('.reveal').forEach(el => {
-            observer.observe(el);
-        });
 
-        // SMOOTH SCROLL
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                const target = document.querySelector(this.getAttribute('href'));
-                if (target) {
-                    target.scrollIntoView({
-                        behavior: 'smooth'
-                    });
+        /* =========================
+           LOADER
+        ========================= */
+
+        window.addEventListener(
+            'load',
+            function () {
+
+                const loader =
+                    document.getElementById(
+                        'loader'
+                    );
+
+                if (loader) {
+
+                    setTimeout(
+                        () => {
+
+                            loader.style.display =
+                                'none';
+
+                        },
+                        2800
+                    );
+
                 }
-            });
-        });
 
-        // LOADER
-        window.addEventListener('load', function() {
-            const loader = document.getElementById('loader');
-            if (loader) {
-                setTimeout(() => {
-                    loader.style.display = 'none';
-                }, 2800);
             }
-        });
+        );
 
-        // NAVBAR SCROLL
-        window.addEventListener('scroll', function() {
-            const nav = document.querySelector('.nav');
-            if (window.scrollY > 100) {
-                nav.style.background = 'rgba(10, 14, 39, 0.98)';
-            } else {
-                nav.style.background = 'rgba(10, 14, 39, 0.95)';
+
+        /* =========================
+           NAVBAR SCROLL
+        ========================= */
+
+        window.addEventListener(
+            'scroll',
+            function () {
+
+                const nav =
+                    document.querySelector(
+                        '.nav'
+                    );
+
+                if (
+                    window.scrollY > 100
+                ) {
+
+                    nav.style.background =
+                        'rgba(10, 14, 39, 0.98)';
+
+                } else {
+
+                    nav.style.background =
+                        'rgba(10, 14, 39, 0.95)';
+
+                }
+
             }
-        });
+        );
 
-        // DYNAMIC YEAR
-        const year = new Date().getFullYear();
-        const copyrightElement = document.querySelector('footer p');
+
+        /* =========================
+           DYNAMIC YEAR
+        ========================= */
+
+        const year =
+            new Date().getFullYear();
+
+        const copyrightElement =
+            document.querySelector(
+                'footer p'
+            );
+
         if (copyrightElement) {
-            copyrightElement.textContent = `© ${year} Phubet Buakhao`;
+
+            copyrightElement.textContent =
+                `© ${year} Phubet Buakhao`;
+
         }
 
-        // WORK ITEMS
-        document.querySelectorAll('.work-item').forEach(item => {
-            item.addEventListener('mouseenter', function() {
-                this.style.transform = 'translateX(20px)';
-            });
-            
-            item.addEventListener('mouseleave', function() {
-                this.style.transform = 'translateX(0)';
-            });
-        });
 
-        // SCROLL TO TOP
-        const backToTopLink = document.querySelector('footer a[href="#top"]');
+        /* =========================
+           WORK ITEMS
+        ========================= */
+
+        document
+            .querySelectorAll('.work-item')
+            .forEach(item => {
+
+                item.addEventListener(
+                    'mouseenter',
+                    function () {
+
+                        this.style.transform =
+                            'translateX(20px)';
+
+                    }
+                );
+
+
+                item.addEventListener(
+                    'mouseleave',
+                    function () {
+
+                        this.style.transform =
+                            'translateX(0)';
+
+                    }
+                );
+
+            });
+
+
+        /* =========================
+           SCROLL TO TOP
+        ========================= */
+
+        const backToTopLink =
+            document.querySelector(
+                'footer a[href="#top"]'
+            );
+
         if (backToTopLink) {
-            backToTopLink.addEventListener('click', function(e) {
-                e.preventDefault();
-                window.scrollTo({
-                    top: 0,
-                    behavior: 'smooth'
-                });
-            });
-        }
 
-        // PRELOAD IMAGES
-        function preloadImages() {
-            const images = document.querySelectorAll('img');
-            images.forEach(img => {
-                const tempImage = new Image();
-                tempImage.src = img.src;
-            });
-        }
+            backToTopLink.addEventListener(
+                'click',
+                function (e) {
 
-        if (document.readyState === 'loading') {
-            document.addEventListener('DOMContentLoaded', preloadImages);
-        } else {
-            preloadImages();
-        }
+                    e.preventDefault();
 
-        // RESPONSIVE
-        function adjustForMobile() {
-            if (window.innerWidth <= 768) {
-                document.querySelectorAll('.work-item').forEach(item => {
-                    item.addEventListener('mouseenter', function() {
-                        this.style.transform = 'translateX(10px)';
+                    window.scrollTo({
+
+                        top: 0,
+
+                        behavior: 'smooth'
+
                     });
-                });
-            }
+
+                }
+            );
+
         }
 
-        window.addEventListener('resize', adjustForMobile);
+
+        /* =========================
+           PRELOAD IMAGES
+        ========================= */
+
+        function preloadImages() {
+
+            const images =
+                document.querySelectorAll(
+                    'img'
+                );
+
+            images.forEach(img => {
+
+                const tempImage =
+                    new Image();
+
+                tempImage.src =
+                    img.src;
+
+            });
+
+        }
+
+
+        if (
+            document.readyState ===
+            'loading'
+        ) {
+
+            document.addEventListener(
+                'DOMContentLoaded',
+                preloadImages
+            );
+
+        } else {
+
+            preloadImages();
+
+        }
+
+
+        /* =========================
+           RESPONSIVE
+        ========================= */
+
+        function adjustForMobile() {
+
+            if (
+                window.innerWidth <= 768
+            ) {
+
+                document
+                    .querySelectorAll(
+                        '.work-item'
+                    )
+                    .forEach(item => {
+
+                        item.addEventListener(
+                            'mouseenter',
+                            function () {
+
+                                this.style.transform =
+                                    'translateX(10px)';
+
+                            }
+                        );
+
+                    });
+
+            }
+
+        }
+
+
+        window.addEventListener(
+            'resize',
+            adjustForMobile
+        );
+
         adjustForMobile();
+
     </script>
 
 </body>
