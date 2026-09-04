@@ -199,7 +199,8 @@
 
         .hero-title-wrap {
             display: flex;
-            gap: 4rem;
+            gap: 3rem;
+            align-items: center;
             margin-bottom: 3rem;
         }
 
@@ -241,6 +242,59 @@
         @keyframes bounce {
             0%, 100% { transform: translateY(0); }
             50% { transform: translateY(10px); }
+        }
+
+
+        /* PROFILE PHOTO */
+        .profile-photo-wrap {
+            flex: 0 0 280px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .profile-photo {
+            width: 260px;
+            height: 320px;
+            object-fit: cover;
+            border-radius: 18px;
+            border: 1px solid #00d4ff;
+            background: #1a1f3a;
+            box-shadow: 0 0 40px rgba(0, 212, 255, 0.12);
+        }
+
+        .photo-upload {
+            color: #00d4ff;
+            border: 1px solid #00d4ff;
+            padding: 0.65rem 1rem;
+            border-radius: 25px;
+            cursor: pointer;
+            font-size: 0.85rem;
+            font-weight: 600;
+            transition: all 0.3s;
+        }
+
+        .photo-upload:hover {
+            background: #00d4ff;
+            color: #0a0e27;
+        }
+
+        #profileUpload {
+            display: none;
+        }
+
+        @media (max-width: 768px) {
+            .profile-photo-wrap {
+                flex: none;
+                width: 100%;
+                margin-top: 1rem;
+            }
+
+            .profile-photo {
+                width: 210px;
+                height: 260px;
+            }
         }
 
         /* ANIMATIONS */
@@ -655,6 +709,11 @@
 
             .hero-title-wrap {
                 flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .hero-side-text {
+                flex: none;
             }
 
             .work-item {
@@ -727,6 +786,20 @@
                             Football<br>
                             Futsal
                         </p>
+                    </div>
+
+                    <div class="profile-photo-wrap reveal">
+                        <img
+                            id="profilePhoto"
+                            class="profile-photo"
+                            src="profile.jpg"
+                            alt="รูปโปรไฟล์ของภูเบศวร์ บัวขาว"
+                            onerror="this.src='https://placehold.co/520x640/1a1f3a/00d4ff?text=YOUR+PHOTO'"
+                        >
+                        <label class="photo-upload" for="profileUpload">
+                            + เลือกรูปของตัวเอง
+                        </label>
+                        <input id="profileUpload" type="file" accept="image/*">
                     </div>
                 </div>
 
@@ -1020,6 +1093,29 @@
     </footer>
 
     <script>
+
+        // PROFILE PHOTO UPLOAD
+        const profileUpload = document.getElementById('profileUpload');
+        const profilePhoto = document.getElementById('profilePhoto');
+
+        if (profileUpload && profilePhoto) {
+            profileUpload.addEventListener('change', function () {
+                const file = this.files && this.files[0];
+                if (!file) return;
+
+                if (!file.type.startsWith('image/')) {
+                    alert('กรุณาเลือกรูปภาพเท่านั้น');
+                    return;
+                }
+
+                const reader = new FileReader();
+                reader.onload = function (e) {
+                    profilePhoto.src = e.target.result;
+                };
+                reader.readAsDataURL(file);
+            });
+        }
+
         // REVEAL ANIMATIONS
         const observerOptions = {
             threshold: 0.1,
